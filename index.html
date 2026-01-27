@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LXXN Station | Manipulación Táctica de Ruido</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lxxn-red: #e11d48;
+            --lxxn-cyan: #00ffff;
+            --lxxn-black: #0a0a0a;
+        }
+        body {
+            background-color: var(--lxxn-black);
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Efecto de Glitch para títulos */
+        .glitch {
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+            animation: glitch 500ms infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75), 0.025em 0.05em 0 rgba(0, 0, 255, 0.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75); }
+            49% { text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75), 0.025em 0.025em 0 rgba(0, 255, 0, 0.75), -0.05em -0.05em 0 rgba(0, 0, 255, 0.75); }
+            50% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75); }
+            99% { text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75), 0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75); }
+            100% { text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75), -0.025em -0.025em 0 rgba(0, 255, 0, 0.75), -0.025em -0.05em 0 rgba(0, 255, 0, 0.75); }
+        }
+
+        .lxxn-border { border: 2px solid var(--lxxn-red); }
+        .lxxn-glow:hover { box-shadow: 0 0 20px var(--lxxn-red); }
+        .bg-gradient-lxxn { background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <section class="min-h-screen flex flex-col justify-center items-center text-center p-6 bg-gradient-lxxn relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+        
+        <div class="mb-8 animate-pulse">
+            <h1 class="text-7xl md:text-9xl font-bold glitch tracking-tighter text-white">LXXN</h1>
+            <p class="mono text-cyan-400 tracking-[0.3em] text-sm md:text-lg">STATION_V1.0</p>
+        </div>
+
+        <p class="text-xl md:text-2xl max-w-2xl text-gray-400 font-light mb-10">
+            Esculpe el caos. Demanda el control. Sonido crudo y sin compromisos para el underground experimental.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://leanmartinez.itch.io/lxxn" class="lxxn-border lxxn-glow bg-red-600 px-10 py-4 font-bold rounded-sm uppercase tracking-widest transition-all">
+                Descargar APK
+            </a>
+            <a href="https://www.instagram.com/lxxn.station/" class="border-2 border-white px-10 py-4 font-bold rounded-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                Instagram
+            </a>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-black">
+        <div class="max-w-4xl mx-auto border-l-4 border-red-600 pl-8">
+            <h2 class="text-4xl font-bold mb-8 uppercase italic">Manifiesto LXXN: Fuera del Sistema</h2>
+            <div class="space-y-6 text-lg text-gray-300 mono leading-relaxed">
+                <p>Elegimos estar fuera de las tiendas oficiales porque creemos en el software libre, el acceso directo y la cultura DIY. Sin algoritmos, sin intermediarios.</p>
+                <p class="text-white font-bold">LXXN STATION ES GRATIS PARA TODOS.</p>
+                <p>Nuestra misión es crear una comunidad de ruido. Queremos tus ideas: si necesitas una función, un filtro nuevo o un motor de audio específico, lo construimos juntos. Cada descarga alimenta la creación de nuevas APKs y contenido experimental.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-zinc-900">
+        <div class="container mx-auto">
+            <h2 class="text-5xl font-bold text-center mb-16 mono tracking-tighter underline decoration-red-600">GUÍA_DE_OPERACIÓN</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-8 bg-black border border-zinc-800 hover:border-red-600 transition-colors">
+                    <h3 class="text-red-500 font-bold mb-4 mono uppercase">01. Selección y Loop</h3>
+                    <p class="text-gray-400">Un <span class="text-white font-bold">TAP</span> dispara el sonido instantáneamente. Un <span class="text-white font-bold">DOBLE TAP</span> activa el modo LOOP: el botón se marcará con un <span class="text-red-500">borde rojo</span> y el caos no se detendrá.</p>
+                </div>
+
+                <div class="p-8 bg-black border border-zinc-800 hover:border-red-600 transition-colors">
+                    <h3 class="text-red-500 font-bold mb-4 mono uppercase">02. Warping Táctico</h3>
+                    <p class="text-gray-400">Usa el <span class="text-white font-bold">PAD XY</span> central para mutar la realidad. El Eje X controla el Pitch y el Eje Y la Velocidad. Arrastra para deformar texturas en tiempo real.</p>
+                </div>
+
+                <div class="p-8 bg-black border border-zinc-800 hover:border-red-600 transition-colors">
+                    <h3 class="text-red-500 font-bold mb-4 mono uppercase">03. Botón de Pánico</h3>
+                    <p class="text-gray-400">El botón <span class="text-white font-bold">KILL ALL</span> es absoluto. Silencio total inmediato. Sin desvanecimientos, sin piedad. El control total vuelve a tus manos.</p>
+                </div>
+
+                <div class="p-8 bg-black border border-zinc-800 hover:border-red-600 transition-colors lg:col-span-2">
+                    <h3 class="text-red-500 font-bold mb-4 mono uppercase">04. Sampler Vivo (MIC/REC)</h3>
+                    <p class="text-gray-400">Un toque comienza a grabar tu entorno. El segundo toque detiene la grabación y la convierte en un instrumento más de la estación. <span class="text-white font-bold italic">Hold (mantener)</span> para resetear el slot y capturar algo nuevo.</p>
+                </div>
+
+                <div class="p-8 bg-black border border-zinc-800 hover:border-red-600 transition-colors">
+                    <h3 class="text-red-500 font-bold mb-4 mono uppercase">05. Carga Externa</h3>
+                    <p class="text-gray-400">Botón <span class="text-white font-bold">LOAD+</span> para importar tus propios samples desde el dispositivo. Tus archivos, tu ruido.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-black border-t border-zinc-800">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-12 uppercase tracking-widest text-cyan-400">Instalación Independiente</h2>
+            <div class="grid gap-6 text-left">
+                <div class="flex items-start gap-4 p-4 bg-zinc-900 rounded">
+                    <span class="mono bg-red-600 px-3 py-1 text-xs">PASO_01</span>
+                    <p class="text-sm">Baja el archivo APK desde Itch.io (Link en la Bio).</p>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-zinc-900 rounded">
+                    <span class="mono bg-red-600 px-3 py-1 text-xs">PASO_02</span>
+                    <p class="text-sm">Android te avisará sobre "Fuentes Desconocidas". Ve a Ajustes y otorga permiso. Es el procedimiento estándar fuera de las tiendas oficiales.</p>
+                </div>
+                <div class="flex items-start gap-4 p-4 bg-zinc-900 rounded">
+                    <span class="mono bg-red-600 px-3 py-1 text-xs">PASO_03</span>
+                    <p class="text-sm">Ejecuta el instalador y abre la estación. Sin rastreadores, 0% basura, 100% audio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black border-t-2 border-red-600 text-center">
+        <p class="mono text-xs text-zinc-600 mb-6">LXXN_STATION // BY_LEANDRO_MARTINEZ // 2026</p>
+        <div class="flex justify-center gap-8">
+            <a href="https://www.instagram.com/lxxn.station/" class="text-zinc-400 hover:text-white transition-colors">Instagram</a>
+            <a href="https://leanmartinez.itch.io/lxxn" class="text-zinc-400 hover:text-white transition-colors">Itch.io</a>
+        </div>
+    </footer>
+
+</body>
+</html>
