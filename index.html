@@ -28,7 +28,7 @@
             background: url('https://www.transparenttextures.com/patterns/stardust.png');
             opacity: 0.05;
             pointer-events: none;
-            z-index: 50;
+            z-index: 100;
             animation: noise-move 0.2s infinite;
         }
 
@@ -36,7 +36,6 @@
             0% { transform: translate(0,0); }
             10% { transform: translate(-1%,-1%); }
             20% { transform: translate(1%,1%); }
-            30% { transform: translate(-2%,0); }
             100% { transform: translate(0,0); }
         }
 
@@ -47,7 +46,7 @@
             background: rgba(225, 29, 72, 0.1);
             position: fixed;
             top: 0;
-            z-index: 100;
+            z-index: 110;
             pointer-events: none;
             animation: scanline 4s linear infinite;
         }
@@ -76,11 +75,8 @@
             7% { transform: skew(-15deg); color: var(--lxxn-cyan); }
             8% { transform: skew(15deg); color: var(--lxxn-red); }
             9% { transform: none; }
-            15% { transform: scaleY(1.1) skewX(5deg); }
-            16% { transform: none; }
         }
 
-        /* BORDES QUE VIBRAN */
         .vibrate-border:hover {
             animation: vibrate 0.1s linear infinite;
             border-color: var(--lxxn-red);
@@ -91,11 +87,9 @@
             0% { transform: translate(0); }
             25% { transform: translate(2px, -2px); }
             50% { transform: translate(-2px, 2px); }
-            75% { transform: translate(2px, 2px); }
             100% { transform: translate(0); }
         }
 
-        /* BOTÓN DE DESCARGA RUIDOSO */
         .btn-lxxn {
             background: var(--lxxn-red);
             position: relative;
@@ -106,6 +100,22 @@
             background: #fff;
             color: #000;
             transform: scale(1.05);
+        }
+
+        /* Estilo para Inputs */
+        .input-lxxn {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            color: #00ffff;
+            padding: 1rem;
+            width: 100%;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.3s;
+        }
+        .input-lxxn:focus {
+            border-color: var(--lxxn-red);
+            outline: none;
+            box-shadow: 0 0 10px rgba(225, 29, 72, 0.3);
         }
     </style>
 </head>
@@ -125,7 +135,7 @@
                 <a href="https://leanmartinez.itch.io/lxxn" class="btn-lxxn px-12 py-5 font-black text-xl tracking-tighter uppercase">
                     Bajar APK
                 </a>
-                <a href="https://www.instagram.com/lxxn.station/" class="border-b-2 border-zinc-800 hover:border-cyan-400 py-2 transition-all text-zinc-400 hover:text-cyan-400">
+                <a href="https://www.instagram.com/lxxn.station/" class="border-b-2 border-zinc-800 hover:border-cyan-400 py-2 transition-all text-zinc-400 hover:text-cyan-400 uppercase text-xs">
                     Comunidad Instagram
                 </a>
             </div>
@@ -176,6 +186,40 @@
                     <p class="text-zinc-500 leading-snug">Toca para grabar. Toca para tocar. Mantén presionado para borrar y resetear el slot. El mundo es tu instrumento.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl font-black mb-4 uppercase italic text-cyan-400">Feedback_Terminal</h2>
+            <p class="mono text-xs text-zinc-500 mb-12 uppercase tracking-widest">Envía tus logs, dudas o sugerencias directamente al núcleo.</p>
+            
+            <form action="https://formspree.io/f/lxxnstation@gmail.com" method="POST" class="space-y-6">
+                <div>
+                    <label class="block mono text-[10px] text-zinc-400 mb-2 uppercase tracking-widest">Identidad (Nombre)</label>
+                    <input type="text" name="name" required class="input-lxxn" placeholder="USUARIO_01">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block mono text-[10px] text-zinc-400 mb-2 uppercase tracking-widest">Instagram</label>
+                        <input type="text" name="instagram" class="input-lxxn" placeholder="@TU_CUENTA">
+                    </div>
+                    <div>
+                        <label class="block mono text-[10px] text-zinc-400 mb-2 uppercase tracking-widest">Email</label>
+                        <input type="email" name="email" required class="input-lxxn" placeholder="CONTACTO@MAIL.COM">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mono text-[10px] text-zinc-400 mb-2 uppercase tracking-widest">Consulta / Feedback</label>
+                    <textarea name="message" rows="4" required class="input-lxxn" placeholder="Escribe aquí..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-white text-black py-5 font-black uppercase hover:bg-red-600 hover:text-white transition-all transform hover:scale-[1.02]">
+                    Enviar Datos
+                </button>
+            </form>
         </div>
     </section>
 
