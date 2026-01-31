@@ -308,7 +308,7 @@
 
     <button id="audio-toggle" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-black border border-zinc-800 px-4 py-2 hover:border-red-600 transition-all group">
         <div id="audio-indicator" class="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-red-600 transition-colors"></div>
-        <span id="audio-text" class="mono text-[10px] text-zinc-500 uppercase tracking-widest group-hover:text-white">AUDIO_OFF</span>
+        <span id="audio-text" class="mono text-[10px] text-zinc-500 uppercase tracking-widest group-hover:text-white">NOISE_OFF</span>
     </button>
 
     <script>
@@ -326,14 +326,14 @@
                 audio.play();
                 indicator.classList.remove('bg-zinc-600');
                 indicator.classList.add('bg-red-600', 'animate-pulse'); // Luz roja parpadeando
-                audioText.innerText = "AUDIO_LIVE";
+                audioText.innerText = "NOISE_LIVE";
                 audioText.classList.remove('text-zinc-500');
                 audioText.classList.add('text-red-600');
             } else {
                 audio.pause();
                 indicator.classList.remove('bg-red-600', 'animate-pulse');
                 indicator.classList.add('bg-zinc-600');
-                audioText.innerText = "AUDIO_OFF";
+                audioText.innerText = "NOISE_OFF";
                 audioText.classList.remove('text-red-600');
                 audioText.classList.add('text-zinc-500');
             }
@@ -345,3 +345,4 @@
     </script>
 </body>
 </html>
+
