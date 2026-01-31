@@ -263,7 +263,7 @@
     </footer>
 
     <script>
-        const form = document.getElementById("lxxn-form");
+      //  const form = document.getElementById("lxxn-form");
         const status = document.getElementById("form-status");
         const btn = document.getElementById("submit-btn");
 
@@ -298,6 +298,50 @@
           });
         }
         form.addEventListener("submit", handleSubmit)
+        
+        
+    </script>
+
+    <audio id="lxxn-engine-sound" loop>
+        <source src="noise_loop.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="audio-toggle" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-black border border-zinc-800 px-4 py-2 hover:border-red-600 transition-all group">
+        <div id="audio-indicator" class="w-2 h-2 rounded-full bg-zinc-600 group-hover:bg-red-600 transition-colors"></div>
+        <span id="audio-text" class="mono text-[10px] text-zinc-500 uppercase tracking-widest group-hover:text-white">AUDIO_OFF</span>
+    </button>
+
+    <script>
+        // SCRIPT DE AUDIO ENGINE
+        const audio = document.getElementById('lxxn-engine-sound');
+        const toggleBtn = document.getElementById('audio-toggle');
+        const indicator = document.getElementById('audio-indicator');
+        const audioText = document.getElementById('audio-text');
+        
+        // Volumen inicial bajo para no aturdir (0.0 a 1.0)
+        audio.volume = 0.4; 
+
+        toggleBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                indicator.classList.remove('bg-zinc-600');
+                indicator.classList.add('bg-red-600', 'animate-pulse'); // Luz roja parpadeando
+                audioText.innerText = "AUDIO_LIVE";
+                audioText.classList.remove('text-zinc-500');
+                audioText.classList.add('text-red-600');
+            } else {
+                audio.pause();
+                indicator.classList.remove('bg-red-600', 'animate-pulse');
+                indicator.classList.add('bg-zinc-600');
+                audioText.innerText = "AUDIO_OFF";
+                audioText.classList.remove('text-red-600');
+                audioText.classList.add('text-zinc-500');
+            }
+        });
+
+        // INTEGRACIÓN CON FORMULARIO (Código existente)
+        const form = document.getElementById("lxxn-form");
+        // ... (El resto de tu script del formulario sigue igual)
     </script>
 </body>
 </html>
